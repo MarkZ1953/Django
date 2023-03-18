@@ -1,0 +1,75 @@
+-----------------------------------------------------------------------
+
+Crear un espacio Virtual :
+- py -3 -m venv venv
+
+-----------------------------------------------------------------------
+
+Crear un proyecto de Django:
+django-admin startproject nombre_proyecto
+
+-----------------------------------------------------------------------
+
+Encender el servidor:
+python manage.py runserver
+
+Apagar Servidor:
+Control + C
+
+-----------------------------------------------------------------------
+
+python manage.py startapp webapp
+
+-----------------------------------------------------------------------
+
+#Ver las migraciones pendientes:
+python manage.py showmigrations
+
+#Aplicar las migraciones pendientes
+python manage.py migrate
+
+#crear un usuario para admin
+python manage.py createsuperuser
+username: admin
+email: admin@mail.com
+pass: 123
+
+bypass: y
+
+
+#crear personas app (dentro de la carpeta del proyecto, pero la carpeta más externa: src)
+python manage.py startapp personas
+
+#registrar el app en settings.py 
+
+#buscamos las migraciones por hacer 
+python manage.py makemigrations
+
+#ver el archivo dentro de la carpeta de migrations, es código python genérico
+
+#ver el sql a ejecutar
+python manage.py sqlmigrate personas 0001
+
+#crear la tabla y ver cómo se creó (prefijo)
+python manage.py migrate
+
+#entrar a la consola de admin (revisar settings.p y urls.py)
+en la carpeta de personas, entrar a admin.py
+from .models import Persona
+
+admin.site.register(Persona)
+
+#crear un usuario para admin
+python manage.py createsuperuser
+username: admin
+email: admin@mail.com
+pass: 123
+
+bypass: y
+
+ejecutar el server y entrar a /admin
+
+#user y groups están siempre presentes
+entrar a Persona y agregar algunas personas
+
+#agregar el metodo __str__
